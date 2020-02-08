@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -18,7 +18,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-item-decriptions: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -35,4 +35,404 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1;;
+  margin: 0;
+  padding: 0;
 }
+
+/*==================
+Items CSS Start
+=====================*/
+.item {
+  display: block;
+  border: 0px solid #9b9999;
+  margin:10px auto 10px auto;
+
+}
+
+.item img{
+  width:100%;
+  max-width: 100%;
+  min-height: 150px;
+}
+.item-decription{
+  display: block;
+  padding: 5px 7px 20px 5px ;
+}
+.item-decription h1{
+  font-size: 16px;
+  font-weight: 500;
+  color:#9b9999;
+}
+.item-decription h3{
+  font-size: 12px;
+  font-weight: 600;
+  color:#000000;
+}
+.price{
+  color:#000000;
+}
+.mrp{
+  padding: 0 5px;
+  color:#c0bdbd;
+}
+.off{
+  color:#0b9619;
+}
+
+.item-decription button,
+.item-decription button:focus {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  width: 100px;
+  text-align: center;
+  padding: 3px 5px;
+  color:#000000;
+  outline: none;
+  background-color: #F7AD22;
+  border:1px solid #F7AD22;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+.item-decription button:hover {
+  background-color: #F7AD22;
+  border:1px solid #f7ad22;
+  outline: none;
+  color: #000000;
+}
+.data-not-fetch{
+  font-size: 15px;
+  color: #c20d0d;
+  text-align: center;
+}
+.left-border{
+  border-left: 1px solid #9b9999;
+}
+/*==================
+Items CSS Ends
+=====================*/
+@media (min-width: 1024px) {
+
+  .sort-option{
+    display: none!important;
+  }
+  .sort-button{
+    display: none!important;
+  }
+
+  .items-sort{
+    margin: 15px 0 15px 0;
+    padding: 0;
+  }
+
+  .items-sort > li{
+    display: inline-block;
+    list-style: none;
+  }
+  .items-sort > li>h4{
+    float: left;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    padding-right: 15px;
+    margin:0;
+  }
+  .items-sort > li > ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .items-sort > li > ul > li{
+    display: inline-block;
+    list-style: none;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+  .items-sort > li > ul > li>label{
+    font-size: 14px;
+    color: #777789;
+  }
+}
+
+@media (max-width: 991px) {
+  .sort-option{
+    display: block;
+  }
+  .sort-button{
+    display: block;
+  }
+
+
+  .items-sort{
+    margin: 15px 0 15px 0;
+    padding: 0;
+  }
+  
+  .items-sort > li{
+    position: relative;
+    display: inline-block;
+    list-style: none;
+  }
+  .items-sort > li>h4{
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    padding-right: 15px;
+    margin:0;
+  }
+
+  .items-sort > li > ul {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    margin: 0;
+    padding: 10px 10px 0 10px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+  }
+  
+  .items-sort > li:hover > ul {
+    position: absolute;
+    display: block;
+    margin: 0;
+    padding: 10px 10px 0 10px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+  }
+
+  .items-sort > li > ul > li{
+    display: block;
+    list-style: none;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+  .items-sort > li > ul > li>label{
+    font-size: 14px;
+    color: #777789;
+    white-space: nowrap;
+  }
+
+  .items-sort > li > ul > li.sort-option h6 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #777789;
+  }
+
+  .items-sort > li > ul > li.sort-button{
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .items-sort > li > ul > li.sort-button a {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    color: #007bff;
+    width: 50%;
+    padding: 10px 5px 10px 5px;
+    cursor: pointer;
+  }
+
+  .items-sort > li > ul > li.sort-button a:first-child{
+    border-right: 1px solid #dddddd;
+  }
+  .items-sort > li > ul > li.sort-button a:hover{
+    color: #0a5bb3;
+    text-align: center;
+  }
+}
+
+
+
+
+/*=====================
+Filter CSS
+====================*/
+
+@media (min-width: 1024px) {
+
+  .filter-option{
+    display: none!important;
+  }
+  .filter-button{
+    display: block!important;
+  }
+
+  .items-filter{
+    margin: 15px 0 15px 0;
+    padding: 0;
+  }
+
+  .items-filter > li{
+    display: inline-block;
+    list-style: none;
+    width: 100%;
+  }
+  .items-filter > li>h4{
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    padding-right: 15px;
+    margin:0;
+  }
+  .items-filter > li > ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .items-filter > li > ul > li{
+    display: block;
+    list-style: none;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+  .items-filter > li > ul > li>label{
+    font-size: 14px;
+    color: #777789;
+  }
+
+  .items-filter > li > ul > li.filter-button{
+    border-top: 0px solid #ddd;
+    margin-top: 20px;
+    margin-left: -10px;
+    margin-right: -10px;
+    text-align: center;
+  }
+  .items-filter > li > ul > li.filter-button a {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+    background-color: #007bff;
+    width: 120px;
+    padding: 10px 5px 10px 5px;
+    cursor: pointer;
+    border-radius: 30px;
+    margin: 0 auto;
+    text-align:center;
+  }
+
+  .items-filter > li > ul > li.filter-button a:first-child{
+    border-right: 1px solid #dddddd;
+    display: none;
+  }
+  .items-filter > li > ul > li.filter-button a:hover{
+    color: #fafafa;
+    text-align: center;
+  }
+  input[type="range"] {
+    width: 100%;
+    margin:40px 0 20px 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .sort-option{
+    display: block;
+  }
+  .sort-button{
+    display: block;
+  }
+
+
+  .items-filter{
+    margin: 15px 0 15px 0;
+    padding: 0;
+  }
+  c
+  .items-filter > li{
+    position: relative;
+    display: inline-block;
+    list-style: none;
+  }
+  .items-filter > li>h4{
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    padding-right: 15px;
+    margin:0;
+  }
+
+  .items-filter > li > ul {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    margin: 0;
+    padding: 10px 10px 0 10px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+  }
+  
+  .items-filter > li:hover > ul {
+    position: absolute;
+    display: block;
+    margin: 0;
+    padding: 10px 10px 0 10px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+  }
+
+  .items-filter > li > ul > li{
+    display: block;
+    list-style: none;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+  .items-filter > li > ul > li>label{
+    font-size: 14px;
+    color: #777789;
+    white-space: nowrap;
+  }
+
+  .items-filter > li > ul > li.filter-option h6 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #777789;
+  }
+
+  .items-filter > li > ul > li.filter-button{
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .items-filter > li > ul > li.filter-button a {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    color: #007bff;
+    width: 50%;
+    padding: 10px 5px 10px 5px;
+    cursor: pointer;
+  }
+
+  .items-filter > li > ul > li.filter-button a:first-child{
+    border-right: 1px solid #dddddd;
+  }
+  .items-filter > li > ul > li.filter-button a:hover{
+    color: #0a5bb3;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+

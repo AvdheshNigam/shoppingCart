@@ -1,24 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Container, Col, Row } from 'react-bootstrap';
+import { FaAccessibleIcon } from 'react-icons/fa';
+
+import PageHeader from './component/common/header/';
+import PageFooter from './component/common/footer/';
+
+import Products from './component/products/';
+import SortItems from './component/products/sort';
+import FilterItems from './component/products/filters';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <Row>
+          <Col lg={12}>
+            <PageHeader />
+          </Col>
+          <Col lg={3}>
+          <FilterItems />
+          </Col>
+          
+          <Col lg={9}>
+            <SortItems />
+            <Products />
+          </Col>
+          <Col lg={12}>
+            <PageFooter />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
