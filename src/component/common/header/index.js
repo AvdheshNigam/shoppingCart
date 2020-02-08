@@ -44,7 +44,7 @@ export default  class Header extends React.Component {
           <Form inline>
             {showContent === true ? <FormControl type="text" placeholder="Search" className="mr-sm-2 seach-bar" /> : ""}
             <FaSearch color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick= {this.showContent}/>
-            <FaShoppingCart color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick={this.clickCart}/> 
+            {window.location.pathname === '/cart'  ? " "  : <FaShoppingCart color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick={this.clickCart}/>}
           </Form>
         </Navbar>
 	  </div>
