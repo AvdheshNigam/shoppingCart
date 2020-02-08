@@ -42,8 +42,8 @@ class FilterItems extends Component {
                     </datalist>
                   </li>
                   <li className="filter-button">
-                    <a>Cancel</a>
-                    <a>Apply</a>
+                    <a href="!#">Cancel</a>
+                    <a href="!#">Apply</a>
                   </li>
                 </ul>
             </li>

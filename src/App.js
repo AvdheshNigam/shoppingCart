@@ -13,14 +13,14 @@ function App() {
   return (
     
     <BrowserRouter>
-        <div className="App">
-            <PageHeader />
-            <Route exact path='/' component={Products} />
-            <Route exact path='/products' component={Products} />
-            <Route exact path='/cart' component={Cart} />
-            <PageFooter />
-        </div>
-      </BrowserRouter>
+      <div className="App">
+          <PageHeader />
+          <Route exact path='/' component={Products} />
+          <Route exact path='/products' component={Products} />
+          <Route exact path='/cart' component={Cart} />
+          <PageFooter />
+      </div>
+    </BrowserRouter>
   );
 }
 

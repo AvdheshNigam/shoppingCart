@@ -35,8 +35,8 @@ class SortItems extends Component {
                     <label><input type="radio" /> Discount </label>
                   </li>
                   <li className="sort-button">
-                    <a>Cancel</a>
-                    <a>Apply</a>
+                    <a href="!#">Cancel</a>
+                    <a href="!#">Apply</a>
                   </li>
                 </ul>
             </li>
