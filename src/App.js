@@ -8,35 +8,21 @@ import PageHeader from './component/common/header/';
 import PageFooter from './component/common/footer/';
 
 import Products from './component/products/';
-import SortItems from './component/products/sort';
-import FilterItems from './component/products/filters';
-
+import Cart from './component/cart/';
 
 import './App.css';
 
 function App() {
   return (
     
-    <div className="App">
-      <Container className="wrapper">
-        <Row>
-          <Col lg={12}>
+    <BrowserRouter>
+        <div className="App">
             <PageHeader />
-          </Col>
-          <Col lg={3}>
-          <FilterItems />
-          </Col>
-          
-          <Col lg={9}>
-            <SortItems />
-            <Products />
-          </Col>
-          <Col lg={12}>
+            <Route exact path='/' component={Products} />
+            <Route exact path='/cart' component={Cart} />
             <PageFooter />
-          </Col>
-        </Row>
-      </Container>
-    </div>
+        </div>
+      </BrowserRouter>
   );
 }
 
