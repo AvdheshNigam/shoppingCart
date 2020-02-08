@@ -44,12 +44,29 @@ body {
   margin: 0;
   padding: 0;
 }
+@media (min-width: 1140px) {
+  .container{
+    width: 990px;
+  }
+}
 .wrapper{
   background-color: #F1F3F6;
 }
-.wrapper-body{
-  height: calc(100vh - 86px);
+.custom-navbar{
+  background-color: #007bff!important;
 }
+@media (min-width: 991px) {
+  .wrapper-body{
+    height: calc(100vh - 86px);
+  }
+}
+@media (min-width: 1991x) {
+  .product-page-top{
+    margin-top: -150px!important;
+  }
+}
+
+
 
 .seach-bar, 
 .seach-bar:focus{
@@ -95,7 +112,9 @@ Items CSS Start
 footer{
   background-color: #007bff;
   padding: 10px 5px 10px 5px;
+  margin: 0 auto;
 }
+
 footer p{
   font-size: 12px;
   color: #fff;
@@ -171,6 +190,11 @@ Items CSS Start
 }
 .left-border{
   border-left: 1px solid #9b9999;
+}
+@media(min-width: 991px) {
+  .left-border{
+    margin-top: -150px!important;
+  }
 }
 /*==================
 Items CSS Ends
@@ -524,7 +548,7 @@ Filter CSS
   list-style: none;
   width: 33.333%;
 }
-@media(max-width:667px) {
+@media(max-width:991px) {
   .addItem-content li{
     display: block;
     width: 100%;

@@ -30,7 +30,6 @@ class Products extends Component {
           <Col md={12} sm={12} xs={12} lg={{ span: 9, offset: 3}}>
             <Data />
           </Col>
-          
         </Row>
       </Container>
     );
