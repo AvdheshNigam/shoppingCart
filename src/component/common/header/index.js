@@ -3,13 +3,15 @@ import { Nav, Navbar, Form, FormControl } from 'react-bootstrap';
 import { FaStar, FaSearch, FaShoppingCart } from 'react-icons/fa';
 
 export default  class Header extends React.Component {
+
 	constructor(props) {
 		super(props)
     this.state = {
-
+      active: false,
     }
     this.clickProduct = this.clickProduct.bind(this);
     this.clickHome = this.clickHome.bind(this);
+    
   }
 
   clickProduct() {
@@ -32,9 +34,9 @@ export default  class Header extends React.Component {
           <Nav className="mr-auto">
           </Nav>
           <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <FaSearch color="#ffffff" size="16px" style={{'marginLeft':'20px'}}/>
-            <FaShoppingCart color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick={this.clickCart}/>
+            <FormControl type="text" placeholder="Search" className={this.setState.active  ? "mr-sm-2 seach-bar-show" : "mr-sm-2 seach-bar-hide"} />
+            <FaSearch color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick={ ()=> this.setState({active : !this.state.active}) }/>
+            <FaShoppingCart color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick={this.clickCart}/> 
           </Form>
         </Navbar>
 	  </div>

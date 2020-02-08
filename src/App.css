@@ -50,6 +50,16 @@ body {
 .wrapper-body{
   height: calc(100vh - 86px);
 }
+@media (min-width: 480px) {
+  .seach-bar-hide{
+    display: none!important;
+    width: 60%;
+  }
+  .seach-bar-show{
+    display: block!important;
+    width: 60%;
+  }
+}
 /*==================
 Items CSS Start
 =====================*/
@@ -136,7 +146,7 @@ Items CSS Start
 /*==================
 Items CSS Ends
 =====================*/
-@media (min-width: 1024px) {
+@media (min-width: 991px) {
 
   .sort-option{
     display: none!important;
@@ -178,16 +188,21 @@ Items CSS Ends
     font-size: 14px;
     color: #777789;
   }
+  .items-sort > li > ul > li>label:focus,
+  .items-sort > li > ul > li>label:hover,
+  .items-sort > li > ul > li>label:active{
+    font-size: 14px;
+    color: #007bff;
+  }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 990px) {
   .sort-option{
     display: block;
   }
   .sort-button{
     display: block;
   }
-
 
   .items-sort{
     margin: 15px 0 15px 0;
@@ -210,11 +225,12 @@ Items CSS Ends
   .items-sort > li > ul {
     position: absolute;
     z-index: 2;
-    display: block;
+    display: none;
     margin: 0;
     padding: 10px 10px 0 10px;
     background-color: #ffffff;
     border: 1px solid #dddddd;
+    left: -100%;
   }
   
   .items-sort > li:hover > ul {
@@ -224,6 +240,7 @@ Items CSS Ends
     padding: 10px 10px 0 10px;
     background-color: #ffffff;
     border: 1px solid #dddddd;
+    left: -100%;
   }
 
   .items-sort > li > ul > li{
@@ -277,7 +294,7 @@ Items CSS Ends
 Filter CSS
 ====================*/
 
-@media (min-width: 1024px) {
+@media (min-width: 991px) {
 
   .filter-option{
     display: none!important;
@@ -356,7 +373,7 @@ Filter CSS
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   .sort-option{
     display: block;
   }
@@ -386,11 +403,12 @@ Filter CSS
   .items-filter > li > ul {
     position: absolute;
     z-index: 2;
-    display: block;
+    display: none;
     margin: 0;
     padding: 10px 10px 0 10px;
     background-color: #ffffff;
     border: 1px solid #dddddd;
+    right: -50%;
   }
   
   .items-filter > li:hover > ul {
@@ -400,6 +418,7 @@ Filter CSS
     padding: 10px 10px 0 10px;
     background-color: #ffffff;
     border: 1px solid #dddddd;
+    right: -50%;
   }
 
   .items-filter > li > ul > li{

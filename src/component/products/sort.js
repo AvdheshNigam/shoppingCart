@@ -26,13 +26,13 @@ class SortItems extends Component {
                     <h6>Sort Option</h6 >
                   </li>
                   <li>
-                    <label><input type="radio" /> Price-- High Low </label>
+                    <label><input type="radio" name="get-value" /> Price-- High Low </label>
                   </li>
                   <li>
-                    <label><input type="radio" /> Price-- Low High</label>
+                    <label><input type="radio" name="get-value" /> Price-- Low High</label>
                   </li>
                   <li>
-                    <label><input type="radio" /> Discount </label>
+                    <label><input type="radio"  name="get-value" /> Discount </label>
                   </li>
                   <li className="sort-button">
                     <a href="!#">Cancel</a>
