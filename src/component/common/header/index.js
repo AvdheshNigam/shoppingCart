@@ -7,11 +7,11 @@ export default  class Header extends React.Component {
 	constructor(props) {
 		super(props)
     this.state = {
-      active: false,
+      showContent: true,
     }
     this.clickProduct = this.clickProduct.bind(this);
     this.clickHome = this.clickHome.bind(this);
-    
+    this.showContent = this.showContent.bind(this);
   }
 
   clickProduct() {
@@ -26,7 +26,15 @@ export default  class Header extends React.Component {
     window.location.href = "/cart"
   }
 
+  showContent(event) {
+    event.preventDefault()
+    this.setState({
+      showContent: !this.state.showContent
+    })
+  }
 	render() {
+    const {showContent} = this.state
+
     return (
       <div>
         <Navbar bg="primary" variant="dark">
@@ -34,8 +42,8 @@ export default  class Header extends React.Component {
           <Nav className="mr-auto">
           </Nav>
           <Form inline>
-            <FormControl type="text" placeholder="Search" className={this.setState.active  ? "mr-sm-2 seach-bar-show" : "mr-sm-2 seach-bar-hide"} />
-            <FaSearch color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick={ ()=> this.setState({active : !this.state.active}) }/>
+            {showContent === true ? <FormControl type="text" placeholder="Search" className="mr-sm-2 seach-bar" /> : ""}
+            <FaSearch color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick= {this.showContent}/>
             <FaShoppingCart color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick={this.clickCart}/> 
           </Form>
         </Navbar>
