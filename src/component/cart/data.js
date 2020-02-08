@@ -18,12 +18,13 @@ class ItemsCart extends Component {
 
     render() {
     return (
+      <div>
         <div className="addItem">
           <Row>
-            <Col lg="3">
+            <Col lg="3" md={3} sm={3} xs={5}>
               <Image src="https://cdn.mos.cms.futurecdn.net/r75W7xKkPwuFG6gvxjL26o-650-80.jpg" />
             </Col>
-            <Col lg="9">
+            <Col lg="9" md={9} sm={9} xs={7}>
               <ul className="addItem-content">
                 <li>
                 <h6>Items 1</h6>
@@ -36,7 +37,7 @@ class ItemsCart extends Component {
                 </li>
                 <li>
                   <FaMinusCircle className="round-btn" />
-                  <input type="text" className="item-count"/>
+                  <input type="number" className="item-count"/>
                   <FaPlusCircle className="round-btn" />
                 </li>
                 <li>
@@ -46,6 +47,65 @@ class ItemsCart extends Component {
             </Col>
           </Row>
         </div>
+
+        <div className="addItem">
+          <Row>
+            <Col lg="3" md={3} sm={3} xs={5}>
+              <Image src="https://cdn.mos.cms.futurecdn.net/r75W7xKkPwuFG6gvxjL26o-650-80.jpg" />
+            </Col>
+            <Col lg="9" md={9} sm={9} xs={7}>
+              <ul className="addItem-content">
+                <li>
+                <h6>Items 1</h6>
+                <h3>
+                  <FaRupeeSign /> 
+                  <span className="price">300</span>
+                  <strike>900</strike>
+                  <span className="off">off 15%</span>
+                </h3>
+                </li>
+                <li>
+                  <FaMinusCircle className="round-btn" />
+                  <input type="number" className="item-count"/>
+                  <FaPlusCircle className="round-btn" />
+                </li>
+                <li>
+                <Button className="remove-btn">REMOVE</Button>
+                </li>
+              </ul>
+            </Col>
+          </Row>
+        </div>
+
+        <div className="addItem">
+          <Row>
+            <Col lg="3" md={3} sm={3} xs={5}>
+              <Image src="https://cdn.mos.cms.futurecdn.net/r75W7xKkPwuFG6gvxjL26o-650-80.jpg" />
+            </Col>
+            <Col lg="9" md={9} sm={9} xs={7}>
+              <ul className="addItem-content">
+                <li>
+                <h6>Items 1</h6>
+                <h3>
+                  <FaRupeeSign /> 
+                  <span className="price">300</span>
+                  <strike>900</strike>
+                  <span className="off">off 15%</span>
+                </h3>
+                </li>
+                <li>
+                  <FaMinusCircle className="round-btn" />
+                  <input type="number" className="item-count"/>
+                  <FaPlusCircle className="round-btn" />
+                </li>
+                <li>
+                <Button className="remove-btn">REMOVE</Button>
+                </li>
+              </ul>
+            </Col>
+          </Row>
+        </div>
+      </div>
     );
   }
  }

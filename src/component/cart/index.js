@@ -18,11 +18,11 @@ class Cart extends Component {
     return (
       <Container className="wrapper">
         <Row className="wrapper-body">
-          <Col lg={9} md={9} sm={8} xs={12}>
+          <Col lg={9} md={9} sm={7} xs={12}>
             <Data />
           </Col>
           
-          <Col lg={3} md={3} sm={4} xs={12}>
+          <Col lg={3} md={3} sm={5} xs={12}>
             <PriceDetails />
           </Col>
         </Row>

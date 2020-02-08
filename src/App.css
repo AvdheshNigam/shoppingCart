@@ -75,7 +75,15 @@ body {
 .seach-bar::-ms-input-placeholder { 
   color: #ffffff;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+input[type=number] {
+  -moz-appearance:textfield;
+}
 @media (max-width: 991px) {
   .seach-bar{
     width: 60%;
@@ -497,36 +505,59 @@ Filter CSS
 .addItem img{
   width: 100%;
   max-width: 100%;
-  height: 200px;
+  height: 80px;
 }
 
 .addItem-content{
-  margin:0;
+  margin:10px 0 0 0;
   padding:0;
+}
+.addItem-content h3{
+  font-size: 12px;
+}
+.addItem-content strike{
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .addItem-content li{
   display: inline-block;
   list-style: none;
+  width: 33.333%;
 }
-
+@media(max-width:667px) {
+  .addItem-content li{
+    display: block;
+    width: 100%;
+  }
+}
 .round-btn{
   font-size: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color:#000000;
 }
 
 .item-count{
   width: 30px;
   margin-left: 5px;
   margin-right: 5px;
+  text-align: center;
 }
 
 .remove-btn,
 .remove-btn:hover,
-.remove-btn:focus{
+.remove-btn:focus,
+.remove-btn:active:focus{
   font-size: 16px;
   color: #000000;
   background-color: transparent;
   border:0px;
   outline: none;
+  padding: 0;
+  margin-top: 15px;
 }
 
 .price-details{
