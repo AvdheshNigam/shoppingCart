@@ -14,7 +14,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Container>
+      <Container className="wrapper">
         <Row>
           <Col lg={12}>
             <PageHeader />

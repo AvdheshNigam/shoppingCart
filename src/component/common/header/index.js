@@ -16,8 +16,8 @@ export default  class Header extends React.Component {
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <FaSearch color="#ffffff" size="16px" style={{'margin-left':'20px'}}/>
-            <FaShoppingCart color="#ffffff" size="16px" style={{'margin-left':'20px'}}/>
+            <FaSearch color="#ffffff" size="16px" style={{'marginLeft':'20px'}}/>
+            <FaShoppingCart color="#ffffff" size="16px" style={{'marginLeft':'20px'}}/>
           </Form>
         </Navbar>
 	  </div>
