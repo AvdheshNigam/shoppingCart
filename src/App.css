@@ -63,6 +63,19 @@ body {
   height: 30px;
   color:#ffffff;
 } 
+.seach-bar::placeholder { 
+  color: #ffffff;
+  opacity: 1;
+}
+
+.seach-bar:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.seach-bar::-ms-input-placeholder { 
+  color: #ffffff;
+}
+
 @media (max-width: 991px) {
   .seach-bar{
     width: 60%;
