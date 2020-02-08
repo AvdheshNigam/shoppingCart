@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-
 import {Container, Row, Col } from 'react-bootstrap';
-import { FaRupeeSign } from 'react-icons/fa';
 
 import Data from './data';
 import PriceDetails from './priceDetails';

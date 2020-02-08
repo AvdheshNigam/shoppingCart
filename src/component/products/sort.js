@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
-import { Row, Col, Image, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { FaSort } from 'react-icons/fa';
 
 

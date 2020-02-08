@@ -1,9 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import { Container, Col, Row } from 'react-bootstrap';
-import { FaAccessibleIcon } from 'react-icons/fa';
-
 import PageHeader from './component/common/header/';
 import PageFooter from './component/common/footer/';
 

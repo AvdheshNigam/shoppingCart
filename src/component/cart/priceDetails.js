@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-import { Row, Col, Image, Button } from 'react-bootstrap';
-import { FaRupeeSign, FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
+import { FaRupeeSign } from 'react-icons/fa';
 
 
 
@@ -20,10 +19,10 @@ class ItemsCart extends Component {
     return (
         <div className="price-details">
           <h2>Price Details</h2>
-          <p>Price (1 item ) <span>: Rs 900</span></p>
-          <p>Price (1 item ) <span>: Rs 900</span></p>
-          <p>Price (1 item ) <span>: Rs 900</span></p>
-          <h3>Total Payable <span>:Rs 319</span></h3>
+          <p>Price (1 item ) <span>: <FaRupeeSign /> 900</span></p>
+          <p>Price (1 item ) <span>: <FaRupeeSign /> 900</span></p>
+          <p>Price (1 item ) <span>: <FaRupeeSign /> 900</span></p>
+          <h3>Total Payable <span>:<FaRupeeSign /> 319</span></h3>
         </div>
     );
   }
