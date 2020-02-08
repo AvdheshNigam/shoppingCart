@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+
 import { Container, Col, Row } from 'react-bootstrap';
 import { FaAccessibleIcon } from 'react-icons/fa';
 
@@ -9,10 +11,12 @@ import Products from './component/products/';
 import SortItems from './component/products/sort';
 import FilterItems from './component/products/filters';
 
+
 import './App.css';
 
 function App() {
   return (
+    
     <div className="App">
       <Container className="wrapper">
         <Row>
