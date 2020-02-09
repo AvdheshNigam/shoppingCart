@@ -27,6 +27,8 @@ export default  class Header extends React.Component {
   }
 
 	render() {
+    var Values = [];
+    Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
     return (
       <div>
         <Navbar bg="primary" variant="dark">
@@ -36,7 +38,7 @@ export default  class Header extends React.Component {
           <Form inline>
             <FormControl type="text" placeholder="Search" className={this.setState.active  ? "mr-sm-2 seach-bar-show" : "mr-sm-2 seach-bar-hide"} />
             <FaSearch color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick={ ()=> this.setState({active : !this.state.active}) }/>
-            <FaShoppingCart color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick={this.clickCart}/> 
+            <FaShoppingCart color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick={this.clickCart}/><p style={{color:'red',fontWeight: 900}}>{Values.length}</p> 
           </Form>
         </Navbar>
 	  </div>

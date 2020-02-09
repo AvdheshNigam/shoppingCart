@@ -24,7 +24,13 @@ class Products extends Component {
         console.log(error)
         this.setState({errorMsg: 'Error retreving data' })
       })
-    
+    }
+
+    addToCart = (item)=>{
+      var Values = [];
+      Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
+      Values.push(item);
+      window.localStorage.setItem('cartValue', JSON.stringify(Values))
     }
 
     render() {
@@ -43,7 +49,7 @@ class Products extends Component {
                   <strike className="mrp">{item.price + item.discount}</strike>
                   <span className="off">{ item.discount }% Off</span>
                 </h3>
-                <Button>Add to Cart</Button>
+                <Button onClick={()=>this.addToCart(item)}>Add to Cart</Button>
               </div>
             </div>
           </Col> ) : null 

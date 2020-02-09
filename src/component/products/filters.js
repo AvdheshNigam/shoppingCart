@@ -7,9 +7,7 @@ import { FaFilter } from 'react-icons/fa';
 class FilterItems extends Component {
     constructor(props) {
         super(props)
-
-        this.state = {
-            
+        this.state = { 
         }
     }
 
@@ -23,7 +21,7 @@ class FilterItems extends Component {
               <h4><FaFilter /> Filters</h4>
                 <ul>
                   <li className="filter-option">
-                    <h6>Filter Option</h6 >
+                    <h6>Filter Option</h6>
                   </li>
                   <li>
                   <input type="range" list="tickmarks" />
