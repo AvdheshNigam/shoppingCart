@@ -18,7 +18,7 @@ class ItemsCart extends Component {
       Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
       let data = [] 
       Values.map((item)=>{
-        data.push({name:item.name,price:item.price})
+        data.push({name:item.name,price:item.price,discount:item.discount})
       })
       this.setState({
         priceArray:data
@@ -31,8 +31,8 @@ class ItemsCart extends Component {
       let pHtml = []
       {this.state.priceArray.map((item,index)=>{
         total = total+item.price
-        discount = item.price - discount
-        pHtml.push(<p key={index}>Price ({item.name}) <span>: <FaRupeeSign /> {item.price}</span></p>)
+        discount = item.discount
+      pHtml.push(<p key={index}>Price ({item.name}) <span>: <FaRupeeSign /> {item.price} </span></p>)
       })}
     return (
         <div className="price-details">
