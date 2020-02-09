@@ -70,7 +70,7 @@ class ItemsCart extends Component {
                 </li>
                 <li>
                   <FaMinusCircle className="round-btn" onClick={this.removeQuantity} />
-                  <input type="number" className="item-count" value={this.state.itemQuantity}/>
+                  <input type="number" className="item-count" value={this.state.itemQuantity + 1}/>
                   <FaPlusCircle className="round-btn" onClick={this.addQuantity}/>
                 </li>
                 <li>
