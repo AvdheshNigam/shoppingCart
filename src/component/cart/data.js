@@ -13,9 +13,14 @@ class ItemsCart extends Component {
           cartArray:[]
         }
         this.addQuantity = this.addQuantity.bind(this)
+        this.removeQuantity = this.removeQuantity.bind(this)
     }
     addQuantity = () => {
-      console.log("clicked......")
+      console.log("add clicked......")
+    }
+
+    removeQuantity = () => {
+      console.log("remove clicked......")
     }
     
     componentDidMount(){
@@ -52,9 +57,9 @@ class ItemsCart extends Component {
                 </h3>
                 </li>
                 <li>
-                  <FaMinusCircle className="round-btn" />
-                  <input type="number" className="item-count"/>
-                  <FaPlusCircle className="round-btn" onClick={this.addQuantity }/>
+                  <FaMinusCircle className="round-btn" onClick={this.removeQuantity} />
+                  <input type="number" className="item-count" value={ele.price*2}/>
+                  <FaPlusCircle className="round-btn" onClick={this.addQuantity}/>
                 </li>
                 <li>
                 <Button className="remove-btn">REMOVE</Button>

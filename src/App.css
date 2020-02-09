@@ -565,6 +565,7 @@ Filter CSS
 }
 
 .item-count{
+  font-size: 10px;
   width: 30px;
   margin-left: 5px;
   margin-right: 5px;
