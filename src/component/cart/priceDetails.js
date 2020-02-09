@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-
 import { FaRupeeSign } from 'react-icons/fa';
-
-
-
 
 class ItemsCart extends Component {
     constructor(props) {
@@ -27,19 +23,19 @@ class ItemsCart extends Component {
 
     render() {
       let total = 0;
-      let discount = 0;
+      let totalDiscount = 0;
       let pHtml = []
       {this.state.priceArray.map((item,index)=>{
         total = total+item.price
-        discount = item.discount
+        totalDiscount = totalDiscount + item.discount
       pHtml.push(<p key={index}>Price ({item.name}) <span>: <FaRupeeSign /> {item.price} </span></p>)
       })}
     return (
         <div className="price-details">
           <h2>Price Details</h2>
           {pHtml}
-          <p>Discount <span>: <FaRupeeSign /> {discount}</span></p>
-          <h3>Total Payable <span>:<FaRupeeSign /> {total - discount}</span></h3>
+          <p>Discount <span>: <FaRupeeSign /> {totalDiscount}</span></p>
+          <h3>Total Payable <span>:<FaRupeeSign /> {total - totalDiscount}</span></h3>
         </div>
     );
   }
