@@ -10,16 +10,28 @@ class ItemsCart extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          cartArray:[]
+          cartArray:[],
+          itemQuantity : 0,
         }
         this.addQuantity = this.addQuantity.bind(this)
         this.removeQuantity = this.removeQuantity.bind(this)
     }
+
     addQuantity = () => {
+      this.setState(prevState => { 
+        return {
+          itemQuantity : prevState.itemQuantity + 1,
+        }
+      })
       console.log("add clicked......")
     }
 
     removeQuantity = () => {
+      this.setState(prevState => { 
+        return {
+          itemQuantity : prevState.itemQuantity - 1,
+        }
+      })
       console.log("remove clicked......")
     }
     
@@ -58,7 +70,7 @@ class ItemsCart extends Component {
                 </li>
                 <li>
                   <FaMinusCircle className="round-btn" onClick={this.removeQuantity} />
-                  <input type="number" className="item-count" value={ele.price*2}/>
+                  <input type="number" className="item-count" value={this.state.itemQuantity}/>
                   <FaPlusCircle className="round-btn" onClick={this.addQuantity}/>
                 </li>
                 <li>
