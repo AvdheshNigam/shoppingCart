@@ -12,8 +12,12 @@ class ItemsCart extends Component {
         this.state = {
           cartArray:[]
         }
+        this.addQuantity = this.addQuantity.bind(this)
     }
-
+    addQuantity = () => {
+      console.log("clicked......")
+    }
+    
     componentDidMount(){
       let Values = [];
       Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
@@ -50,7 +54,7 @@ class ItemsCart extends Component {
                 <li>
                   <FaMinusCircle className="round-btn" />
                   <input type="number" className="item-count"/>
-                  <FaPlusCircle className="round-btn" />
+                  <FaPlusCircle className="round-btn" onClick={this.addQuantity }/>
                 </li>
                 <li>
                 <Button className="remove-btn">REMOVE</Button>
