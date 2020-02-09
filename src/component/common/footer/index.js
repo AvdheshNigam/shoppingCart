@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
 export default  class Footer extends React.Component {
 	constructor(props) {
@@ -7,9 +8,11 @@ export default  class Footer extends React.Component {
 	}
 	render() {
     return (
-      <footer>
-        <p>&copy;copyRight</p>
-	  </footer>
+      <Container className="custom-navbar">
+        <footer>
+          <p>&copy;copyRight</p>
+      </footer>
+    </Container>
     );
   }
  }

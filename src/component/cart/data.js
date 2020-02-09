@@ -31,11 +31,12 @@ class ItemsCart extends Component {
       let cartHtml = []
       {this.state.cartArray.map((ele,index)=>{
         cartHtml.push(
+        <div className="addItem">
           <Row key={index}>
-            <Col lg="3">
+            <Col lg={3} md={3} sm={3} xs={5}>
               <Image src={ele.img_url} />
             </Col>
-            <Col lg="9">
+            <Col lg="9" md={9} sm={9} xs={7}>
               <ul className="addItem-content">
                 <li>
                 <h6>{ele.name}</h6>
@@ -48,7 +49,7 @@ class ItemsCart extends Component {
                 </li>
                 <li>
                   <FaMinusCircle className="round-btn" />
-                  <input type="text" className="item-count"/>
+                  <input type="number" className="item-count"/>
                   <FaPlusCircle className="round-btn" />
                 </li>
                 <li>
@@ -57,11 +58,12 @@ class ItemsCart extends Component {
               </ul>
             </Col>
           </Row>
+          </div>
           )
       })}
 
     return (
-        <div className="addItem">
+        <div>
         {cartHtml}
         </div>
     );
