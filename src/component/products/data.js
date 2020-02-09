@@ -31,10 +31,11 @@ class Products extends Component {
       Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
       Values.push(item);
       window.localStorage.setItem('cartValue', JSON.stringify(Values))
+      
     }
 
     render() {
-      const {items, errorMsg} = this.state
+      const {items, errorMsg } = this.state
     return (
         <Row className="left-border">
         {
