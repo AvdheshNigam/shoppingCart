@@ -39,7 +39,7 @@ class ItemsCart extends Component {
           <h2>Price Details</h2>
           {pHtml}
           <p>Discount <span>: <FaRupeeSign /> {discount}</span></p>
-          <h3>Total Payable <span>:<FaRupeeSign /> {total}</span></h3>
+          <h3>Total Payable <span>:<FaRupeeSign /> {total - discount}</span></h3>
         </div>
     );
   }
