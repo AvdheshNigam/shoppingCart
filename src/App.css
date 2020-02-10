@@ -57,9 +57,12 @@ body {
 }
 @media (min-width: 991px) {
   .wrapper-body{
-    /* height: calc(100vh - 86px); */
     min-height: 700px;
-  
+  }
+}
+@media (min-width: 990px) {
+  .wrapper-body{
+    min-height: 500px;
   }
 }
 @media (min-width: 1991x) {
