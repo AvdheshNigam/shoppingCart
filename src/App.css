@@ -266,7 +266,7 @@ Items CSS Ends
     color: #007bff;
   }
   .items-sort input[type="radio"] {
-    display: none;
+    opacity: 0;
   }
 }
 
@@ -360,7 +360,7 @@ Items CSS Ends
     text-align: center;
   }
   .items-sort input[type="radio"] {
-    display: block;
+    opacity: 1;
   }
 }
 
