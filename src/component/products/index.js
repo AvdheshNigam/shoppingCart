@@ -15,7 +15,7 @@ class Products extends Component {
           items: [],
           errorMsg : '',
           cartItem:[],
-          searchItem : ''
+          searchItems : ''
         }
     }
 
@@ -57,7 +57,7 @@ class Products extends Component {
 
     sortItems = (data)=>{
       console.log("ahdkjshdkjhasdkjshkjd",data)
-      if(data == 'low'){
+      if(data === 'low'){
         let low = this.state.items.sort((a,b)=>{
            return a.price - b.price
         })
@@ -65,7 +65,7 @@ class Products extends Component {
           items:low
         })
       }
-      if(data == 'high'){
+      if(data === 'high'){
         let high = this.state.items.sort((a,b)=>{
            return  b.price - a.price
         })
@@ -73,7 +73,7 @@ class Products extends Component {
           items:high
         })
       }
-      if(data == 'discount'){
+      if(data === 'discount'){
         let discount = this.state.items.sort((a,b)=>{
            return  b.discount - a.discount
         })
@@ -83,19 +83,22 @@ class Products extends Component {
       }
     }
 
-    handleInput = (e) => {
-      console.log(e.target.value)
-      this.setState({searchItem: e.target.value})  
+    handleSearchBar = (item) => {
+      console.log(item.target.value)
+      this.setState({searchItems : item.target.value})
     }
-
 
     render() {
       var Values = [];
        Values = JSON.parse(window.localStorage.getItem('cartValue')) || [];
+
+      let filteredItems = this.state.items.filter((item) => {
+        return item.name.toLowerCase().includes(this.state.searchItems.toLowerCase())
+      })
       
     return (
       <div>
-      <PageHeader cart={Values.length > 0 ? Values.length:this.state.cartItem.length} handleInput={this.handleInput} />
+      <PageHeader cart={Values.length > 0 ? Values.length:this.state.cartItem.length} handleSearchBar={this.handleSearchBar} />
       <Container className="wrapper">
         <Row>
           <Col lg={3} md={6} sm={6} xs={6}>
@@ -108,7 +111,7 @@ class Products extends Component {
 
         <Row>
           <Col md={12} sm={12} xs={12} lg={{ span: 9, offset: 3}}>
-            <Data items={this.state.items} addToCart={this.addToCart} errorMsg={this.state.errorMsg} />
+            <Data items={this.state.items} addToCart={this.addToCart} errorMsg={this.state.errorMsg} filteredItems={filteredItems}/>
           </Col>
         </Row>
       </Container>

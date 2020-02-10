@@ -11,12 +11,13 @@ class Products extends Component {
     
 
     render() {
-      const {items, errorMsg } = this.props
+      const {items, errorMsg, filteredItems } = this.props
+
     return (
         <Row className="left-border">
         {
           items.length ?
-          items.map(item => <Col lg={3} md={3} sm={6} xs={6} key={item.id}>
+          filteredItems.map(item => <Col lg={3} md={3} sm={6} xs={6} key={item.id} name={item.name} price={item.price}>
             <div className="item">
               <Image src={item.img_url} alt={ item.name } />
               <div className="item-decription">
