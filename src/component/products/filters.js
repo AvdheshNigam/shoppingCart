@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FaRupeeSign } from 'react-icons/fa';
 
 import { Row, Col } from 'react-bootstrap';
 import { FaFilter } from 'react-icons/fa';
@@ -24,20 +25,10 @@ class FilterItems extends Component {
                     <h6>Filter Option</h6>
                   </li>
                   <li>
-                  <input type="range" list="tickmarks" />
-                    <datalist id="tickmarks">
-                    <option value="0" label="0%"></option>
-                    <option value="10"></option>
-                    <option value="20"></option>
-                    <option value="30"></option>
-                    <option value="40"></option>
-                    <option value="50" label="50%"></option>
-                    <option value="60"></option>
-                    <option value="70"></option>
-                    <option value="80"></option>
-                    <option value="90"></option>
-                    <option value="100" label="100%"></option>
-                    </datalist>
+                  <div class="slidecontainer">
+                    <p><i className="left"><FaRupeeSign />100:</i> <span id="demo"></span><i className="right"><FaRupeeSign />10000</i></p>
+                    <input type="range" min="10" max="10000" value="10" class="slider" id="myRange" />
+                  </div>
                   </li>
                   <li className="filter-button">
                     <a href="#">Cancel</a>
