@@ -13,7 +13,8 @@ class Products extends Component {
         super(props)
         this.state = {
           items: [],
-          errorMsg : ''
+          errorMsg : '',
+          cartItem:[]
         }
     }
 
@@ -48,6 +49,9 @@ class Products extends Component {
         Values.push(newObj);
       }
       window.localStorage.setItem('cartValue', JSON.stringify(Values))
+      this.setState({
+        cartItem:Values
+      })
     }
 
     sortItems = (data)=>{
@@ -81,10 +85,11 @@ class Products extends Component {
 
 
     render() {
-
+      var Values = [];
+       Values = JSON.parse(window.localStorage.getItem('cartValue')) || [];
     return (
       <div>
-      <PageHeader />
+      <PageHeader cart={Values.length > 0 ? Values.length:this.state.cartItem.length} />
       <Container className="wrapper">
         <Row>
           <Col lg={3} md={6} sm={6} xs={6}>

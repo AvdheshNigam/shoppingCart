@@ -33,8 +33,6 @@ export default  class Header extends React.Component {
     })
   }
 	render() {
-    var Values = [];
-    Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
     const {showContent} = this.state
     return (
       <Container className="custom-navbar">
@@ -47,8 +45,8 @@ export default  class Header extends React.Component {
             <Form inline>
               {showContent === true ? <FormControl type="text" placeholder="Search" className="mr-sm-2 seach-bar" /> : ""}
               <FaSearch color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick= {this.showContent}/>
-              {window.location.pathname === '/cart'  ? " "  : <FaShoppingCart color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick={this.clickCart}/>}
-              <p style={{color:'red',fontWeight: 900}}>{Values.length}</p>
+              <FaShoppingCart color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick={this.clickCart}/>
+              <p style={{color:'red',fontWeight: 900}}>{this.props.cart}</p>
             </Form>
           </Navbar>
           </Col>
