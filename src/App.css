@@ -71,11 +71,6 @@ body {
   }
 }
 
- input[type="radio"]:checked + label {
-  color:#ff0000;
-  font-weight: 600;
- }
-
  .basketCount{
    font-size: 12px;
    background-color: #ff0000;
@@ -266,6 +261,9 @@ Items CSS Ends
     font-size: 14px;
     color: #007bff;
   }
+  .items-sort input[type="radio"] {
+    display: none;
+  }
 }
 
 @media (max-width: 990px) {
@@ -356,6 +354,9 @@ Items CSS Ends
   .items-sort > li > ul > li.sort-button a:hover{
     color: #0a5bb3;
     text-align: center;
+  }
+  .items-sort input[type="radio"] {
+    display: block;
   }
 }
 
