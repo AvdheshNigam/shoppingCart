@@ -9,60 +9,12 @@ import { FaRupeeSign, FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
 class ItemsCart extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-          cartArray:[]
-        }
+        this.state = {}
     }
-
-    removeItem = (data) => {
-      let Values = [];
-      Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
-      for( var i = Values.length-1; i--;){
-      if ( Values[i].id === data) {
-        Values.splice(i,1);
-      }
-    }
-    window.localStorage.setItem('cartValue', JSON.stringify(Values))
-  }
-
-    addQuantity = (data) => {
-      let Values = [];
-      Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
-      for( var i = Values.length-1; i--;){
-      if ( Values[i].id === data) {
-          Values[i].quantity += 1
-      }
-    }
-    window.localStorage.setItem('cartValue', JSON.stringify(Values))
-  }
-
-    removeQuantity = (data) => {
-      let Values = [];
-      Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
-      for( var i = Values.length-1; i--;){
-      if(Values[i].id === data && Values[i].quantity > 1) {
-        Values[i].quantity -= 1
-      }
-    }
-    window.localStorage.setItem('cartValue', JSON.stringify(Values))
-  }
-    
-    componentDidMount(){
-      let Values = [];
-      Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
-      let data = [] 
-      Values.map((item)=>{
-        data.push(item)
-      })
-      this.setState({
-        cartArray:data
-      })
-    }
-
 
     render() {
       let cartHtml = []
-      {this.state.cartArray.map((ele,index)=>{
+      {this.props.cartArray.map((ele,index)=>{
         cartHtml.push(
         <div className="addItem" key={index}>
           <Row key={index}>
@@ -81,12 +33,12 @@ class ItemsCart extends Component {
                 </h3>
                 </li>
                 <li>
-                  <FaMinusCircle className="round-btn" onClick={()=>this.removeQuantity(ele.id)}/>
-                  <input type="number" className="item-count" value={ele.quantity}/>
-                  <FaPlusCircle className="round-btn" onClick={()=>this.addQuantity(ele.id)}/>
+                  <FaMinusCircle className="round-btn" onClick={()=>this.props.removeQuantity(ele.id)}/>
+                  <input type="number" className="item-count" readOnly={true} value={ele.quantity}/>
+                  <FaPlusCircle className="round-btn" onClick={()=>this.props.addQuantity(ele.id)}/>
                 </li>
                 <li>
-                <Button className="remove-btn" onClick={()=>this.removeItem(ele.id)} >REMOVE</Button>
+                <Button className="remove-btn" onClick={()=>this.props.removeItem(ele.id)} >REMOVE</Button>
                 </li>
               </ul>
             </Col>
