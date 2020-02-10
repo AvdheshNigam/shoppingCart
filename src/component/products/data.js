@@ -18,7 +18,7 @@ class Products extends Component {
           items.length ?
           items.map(item => <Col lg={3} md={3} sm={6} xs={6} key={item.id}>
             <div className="item">
-              <Image src={item.img_url} alt="Loading..." />
+              <Image src={item.img_url} alt={ item.name } />
               <div className="item-decription">
                 <h1>{ item.name }</h1>
                 <h3>

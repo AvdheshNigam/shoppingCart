@@ -5,6 +5,9 @@ import SortItems from './sort';
 import FilterItems from './filters';
 import Data from './data';
 
+import PageHeader from '../common/header/';
+import PageFooter from '../common/footer/';
+
 class Products extends Component {
     constructor(props) {
         super(props)
@@ -80,6 +83,8 @@ class Products extends Component {
     render() {
 
     return (
+      <div>
+      <PageHeader />
       <Container className="wrapper">
         <Row>
           <Col lg={3} md={6} sm={6} xs={6}>
@@ -96,6 +101,8 @@ class Products extends Component {
           </Col>
         </Row>
       </Container>
+      <PageFooter />
+      </div>
     );
   }
  }
