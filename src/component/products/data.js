@@ -1,41 +1,17 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-
 import {Row, Col, Image, Button } from 'react-bootstrap';
 import { FaRupeeSign } from 'react-icons/fa';
 
 class Products extends Component {
     constructor(props) {
         super(props)
-
-        this.state = {
-          items: [],
-          errorMsg : ''
-        }
+        this.state = {}
     }
 
-    componentDidMount() {
-      axios.get('https://api.myjson.com/bins/qzuzi')
-      .then(response => {
-        console.log(response)
-        this.setState({items:response.data})
-      })
-      .catch(error => {
-        console.log(error)
-        this.setState({errorMsg: 'Error retreving data' })
-      })
-    }
-
-    addToCart = (item)=>{
-      var Values = [];
-      Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
-      Values.push(item);
-      window.localStorage.setItem('cartValue', JSON.stringify(Values))
-      
-    }
+    
 
     render() {
-      const {items, errorMsg } = this.state
+      const {items, errorMsg } = this.props
     return (
         <Row className="left-border">
         {
@@ -50,7 +26,7 @@ class Products extends Component {
                   <strike className="mrp">{item.price + item.discount}</strike>
                   <span className="off">{ item.discount }% Off</span>
                 </h3>
-                <Button onClick={()=>this.addToCart(item)}>Add to Cart</Button>
+                <Button onClick={()=>this.props.addToCart(item)}>Add to Cart</Button>
               </div>
             </div>
           </Col> ) : null 

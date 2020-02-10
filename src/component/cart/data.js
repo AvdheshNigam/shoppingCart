@@ -14,7 +14,6 @@ class ItemsCart extends Component {
           itemQuantity : 0,
         }
         this.addQuantity = this.addQuantity.bind(this)
-        this.removeQuantity = this.removeQuantity.bind(this)
     }
 
     addQuantity = () => {
@@ -26,14 +25,17 @@ class ItemsCart extends Component {
       console.log("add clicked......")
     }
 
-    removeQuantity = () => {
-      this.setState(prevState => { 
-        return {
-          itemQuantity : prevState.itemQuantity - 1,
-        }
-      })
-      console.log("remove clicked......")
+    removeItem = (data) => {
+      let Values = [];
+      let newData = []
+      Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
+      for( var i = Values.length-1; i--;){
+      if ( Values[i].id === data) {
+        Values.splice(i,1);
+      }
     }
+    window.localStorage.setItem('cartValue', JSON.stringify(Values))
+  }
     
     componentDidMount(){
       let Values = [];
@@ -69,12 +71,12 @@ class ItemsCart extends Component {
                 </h3>
                 </li>
                 <li>
-                  <FaMinusCircle className="round-btn" onClick={this.removeQuantity} />
+                  <FaMinusCircle className="round-btn"/>
                   <input type="number" className="item-count" value={this.state.itemQuantity + 1}/>
                   <FaPlusCircle className="round-btn" onClick={this.addQuantity}/>
                 </li>
                 <li>
-                <Button className="remove-btn">REMOVE</Button>
+                <Button className="remove-btn" onClick={()=>this.removeItem(ele.id)} >REMOVE</Button>
                 </li>
               </ul>
             </Col>

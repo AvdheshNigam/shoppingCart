@@ -23,18 +23,18 @@ class SortItems extends Component {
               <h4><FaSort /> Sort By</h4>
                 <ul>
                   <li className="sort-option">
-                    <h6>Sort Option</h6 >
+                    <h6>Sort Option</h6>
                   </li>
                   <li>
-                    <label><input type="radio" name="get-value" /> Price-- High Low </label>
+                    <label><input type="radio" name="get-value" onClick={()=>{this.props.sortItems('high')}} /> Price-- High Low </label>
                   </li>
                   <li>
-                    <label><input type="radio" name="get-value" /> Price-- Low High</label>
+                    <label><input type="radio" name="get-value" onClick={()=>{this.props.sortItems('low')}} /> Price-- Low High</label>
                   </li>
                   <li>
-                    <label><input type="radio"  name="get-value" /> Discount </label>
+                    <label><input type="radio"  name="get-value" onClick={()=>{this.props.sortItems('discount')}} /> Discount </label>
                   </li>
-                  <li className="sort-button">
+                  <li className="sort-button"> 
                     <a href="!#">Cancel</a>
                     <a href="!#">Apply</a>
                   </li>
