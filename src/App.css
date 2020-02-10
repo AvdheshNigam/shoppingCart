@@ -71,7 +71,7 @@ body {
 }
 @media (min-width: 1991x) {
   .product-page-top{
-    margin-top: -150px!important;
+    margin-top: -10px!important;
   }
 }
 
@@ -211,7 +211,7 @@ Items CSS Start
 }
 @media(min-width: 991px) {
   .left-border{
-    margin-top: -150px!important;
+    margin-top: -100px!important;
   }
 }
 /*==================
