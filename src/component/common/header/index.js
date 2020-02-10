@@ -43,7 +43,7 @@ export default  class Header extends React.Component {
             <Nav className="mr-auto">
             </Nav>
             <Form inline>
-              {showContent === true ? <FormControl type="text" placeholder="Search" className="mr-sm-2 seach-bar" /> : ""}
+              {showContent === true ? <FormControl type="text" placeholder="Search" className="mr-sm-2 seach-bar" onChange={this.props.handleInput}/> : ""}
               <FaSearch color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick= {this.showContent}/>
               <FaShoppingCart color="#ffffff" size="16px" style={{'marginLeft':'20px'}} onClick={this.clickCart}/>
               <p style={{color:'red',fontWeight: 900}}>{this.props.cart}</p>

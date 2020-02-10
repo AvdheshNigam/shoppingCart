@@ -14,7 +14,8 @@ class Products extends Component {
         this.state = {
           items: [],
           errorMsg : '',
-          cartItem:[]
+          cartItem:[],
+          searchItem : ''
         }
     }
 
@@ -82,14 +83,19 @@ class Products extends Component {
       }
     }
 
+    handleInput = (e) => {
+      console.log(e.target.value)
+      this.setState({searchItem: e.target.value})  
+    }
 
 
     render() {
       var Values = [];
        Values = JSON.parse(window.localStorage.getItem('cartValue')) || [];
+      
     return (
       <div>
-      <PageHeader cart={Values.length > 0 ? Values.length:this.state.cartItem.length} />
+      <PageHeader cart={Values.length > 0 ? Values.length:this.state.cartItem.length} handleInput={this.handleInput} />
       <Container className="wrapper">
         <Row>
           <Col lg={3} md={6} sm={6} xs={6}>

@@ -26,7 +26,7 @@ class Products extends Component {
                   <strike className="mrp">{item.price + item.discount}</strike>
                   <span className="off">{ item.discount }% Off</span>
                 </h3>
-                <Button onClick={()=>this.props.addToCart(item)}>Add to Cart</Button>
+                <Button onClick={()=>this.props.addToCart(item)}>Add to Cart2</Button>
               </div>
             </div>
           </Col> ) : null 
