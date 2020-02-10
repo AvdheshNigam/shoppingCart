@@ -35,8 +35,8 @@ class SortItems extends Component {
                     <label><input type="radio"  name="get-value" onClick={()=>{this.props.sortItems('discount')}} /> Discount </label>
                   </li>
                   <li className="sort-button"> 
-                    <a href="!#">Cancel</a>
-                    <a href="!#">Apply</a>
+                    <a href="#">Cancel</a>
+                    <a href="#">Apply</a>
                   </li>
                 </ul>
             </li>
