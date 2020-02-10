@@ -10,28 +10,38 @@ class ItemsCart extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          cartArray:[],
-          itemQuantity : 0,
+          cartArray:[]
         }
-        this.addQuantity = this.addQuantity.bind(this)
-    }
-
-    addQuantity = () => {
-      this.setState(prevState => { 
-        return {
-          itemQuantity : prevState.itemQuantity + 1,
-        }
-      })
-      console.log("add clicked......")
     }
 
     removeItem = (data) => {
       let Values = [];
-      let newData = []
       Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
       for( var i = Values.length-1; i--;){
       if ( Values[i].id === data) {
         Values.splice(i,1);
+      }
+    }
+    window.localStorage.setItem('cartValue', JSON.stringify(Values))
+  }
+
+    addQuantity = (data) => {
+      let Values = [];
+      Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
+      for( var i = Values.length-1; i--;){
+      if ( Values[i].id === data) {
+          Values[i].quantity += 1
+      }
+    }
+    window.localStorage.setItem('cartValue', JSON.stringify(Values))
+  }
+
+    removeQuantity = (data) => {
+      let Values = [];
+      Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
+      for( var i = Values.length-1; i--;){
+      if(Values[i].id === data && Values[i].quantity > 1) {
+        Values[i].quantity -= 1
       }
     }
     window.localStorage.setItem('cartValue', JSON.stringify(Values))
@@ -54,7 +64,7 @@ class ItemsCart extends Component {
       let cartHtml = []
       {this.state.cartArray.map((ele,index)=>{
         cartHtml.push(
-        <div className="addItem">
+        <div className="addItem" key={index}>
           <Row key={index}>
             <Col lg={3} md={3} sm={3} xs={5}>
               <Image src={ele.img_url} />
@@ -71,9 +81,9 @@ class ItemsCart extends Component {
                 </h3>
                 </li>
                 <li>
-                  <FaMinusCircle className="round-btn"/>
-                  <input type="number" className="item-count" value={this.state.itemQuantity + 1}/>
-                  <FaPlusCircle className="round-btn" onClick={this.addQuantity}/>
+                  <FaMinusCircle className="round-btn" onClick={()=>this.removeQuantity(ele.id)}/>
+                  <input type="number" className="item-count" value={ele.quantity}/>
+                  <FaPlusCircle className="round-btn" onClick={()=>this.addQuantity(ele.id)}/>
                 </li>
                 <li>
                 <Button className="remove-btn" onClick={()=>this.removeItem(ele.id)} >REMOVE</Button>
