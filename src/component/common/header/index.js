@@ -39,14 +39,14 @@ export default  class Header extends React.Component {
         <Row>
           <Col lg={12}>
           <Navbar bg="primary" variant="dark">
-            <Navbar.Brand href="#home"><FaStar onClick={this.clickHome} /></Navbar.Brand>
+            <Navbar.Brand href="/"><FaStar style={{'color':'#F7AD22','fontSize':'25px'}} onClick={this.clickHome} /></Navbar.Brand>
             <Nav className="mr-auto">
             </Nav>
             <Form inline>
               {showContent === true ? <FormControl type="text" placeholder="Search" className="mr-sm-2 seach-bar" onChange={this.props.handleSearchBar} /> : ""}
               <FaSearch color="#ffffff" size="16px" style={{'marginLeft':'20px','cursor':'pointer'}} onClick= {this.showContent}/>
-              <FaShoppingCart color="#ffffff" size="16px" style={{'marginLeft':'20px','cursor':'pointer'}} onClick={this.clickCart}/>
-              <p style={{color:'red',fontWeight: 900}}>{this.props.cart}</p>
+              {window.location.pathname === '/cart' ? ' ' : <FaShoppingCart color="#ffffff" size="16px" style={{'marginLeft':'20px','cursor':'pointer'}} onClick={this.clickCart}/> }
+    {window.location.pathname === '/cart' ? ' ' : <p className="basketCount">{this.props.cart}</p> }
             </Form>
           </Navbar>
           </Col>
