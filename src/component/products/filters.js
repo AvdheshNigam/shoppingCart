@@ -27,7 +27,7 @@ class FilterItems extends Component {
                   <li>
                   <div class="slidecontainer">
                     <p><i className="left"><FaRupeeSign />100:</i> <span id="demo"></span><i className="right"><FaRupeeSign />10000</i></p>
-                    <input type="range" min="10" max="10000" class="slider" />
+                    <input type="range" min="10" max="100" class="slider" onInput={this.props.filterRange}/>
                   </div>
                   </li>
                   <li className="filter-button">

@@ -88,6 +88,10 @@ class Products extends Component {
       this.setState({searchItems : item.target.value})
     }
 
+    filterRange = (item) => {
+      console.log(item.target.value)
+    }
+
     render() {
       var Values = [];
        Values = JSON.parse(window.localStorage.getItem('cartValue')) || [];
@@ -102,7 +106,7 @@ class Products extends Component {
       <Container className="wrapper">
         <Row>
           <Col lg={3} md={6} sm={6} xs={6}>
-            <FilterItems />
+            <FilterItems filterRange={this.filterRange}/>
           </Col>
           <Col lg={9} md={6} sm={6} xs={6}>
             <SortItems sortItems={this.sortItems} />
