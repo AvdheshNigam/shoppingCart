@@ -34,6 +34,8 @@ class Products extends Component {
         console.log(error)
         this.setState({errorMsg: 'Error retreving data' })
       })
+
+
     }
 
     addToCart = (item)=>{
@@ -90,40 +92,15 @@ class Products extends Component {
       this.setState({searchItems : item.target.value})
     }
 
-    // filterRange = (data)=>{
-    //   console.log(data.target.value)
-    //   console.log("ahdkjshdkjhasdkjshkjd",data)
-    //   this.state.items.filter(function (item) {
-    //     return item.price <= 320;
-    //   })
-    // }
-
-
     filterRange = (data)=>{
-      
       console.log('text valueeeeee', data.target.value)
-
       let rates = this.state.items.filter(function (item) {
         return item.price <= data.target.value;
       });
-
       console.log('rrrrrr', rates)
-
-      // let highAmount = [];
-      // let refreshList = [highAmount,...this.state.items]
-
-      // console.log('refresh', highAmount)
-
-      // for (let i = 0; i < this.state.items.length; i++) {
-      //   if (this.state.items[i].price <= data.target.value) {
-      //       this.state.items.push(this.state.items[i]);
-      //   }
-      // }
-
+      console.log('itemsssss',this.state.items)
       this.setState({
-        items:rates,
-        //startLow:data.target.value,
-        //rates : [this.state.items]
+        items:rates
       })
     }
 
