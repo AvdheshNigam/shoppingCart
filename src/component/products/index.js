@@ -100,10 +100,10 @@ class Products extends Component {
 
 
     filterRange = (data)=>{
-      let rates = []
+      
       console.log('text valueeeeee', data.target.value)
 
-      rates = this.state.items.filter(function (item) {
+      let rates = this.state.items.filter(function (item) {
         return item.price <= data.target.value;
       });
 
@@ -122,7 +122,7 @@ class Products extends Component {
 
       this.setState({
         items:rates,
-        startLow:data.target.value,
+        //startLow:data.target.value,
         //rates : [this.state.items]
       })
     }
