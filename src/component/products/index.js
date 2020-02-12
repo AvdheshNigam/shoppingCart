@@ -15,11 +15,13 @@ class Products extends Component {
           items: [],
           errorMsg : '',
           cartItem:[],
-          searchItems : ''
+          searchItems : '',
+          amount : '',
+          startLow : '',
         }
     }
 
-
+    
 
     componentDidMount() {
       axios.get('https://api.myjson.com/bins/qzuzi')
@@ -40,7 +42,7 @@ class Products extends Component {
       Values = JSON.parse(window.localStorage.getItem('cartValue')) || [];
       let addFlag = false;
       for(let i in Values){
-        if(Values[i].id == item.id){
+        if(Values[i].id === item.id){
           Values[i].quantity +=1;
           addFlag = true;
         }
@@ -88,10 +90,47 @@ class Products extends Component {
       this.setState({searchItems : item.target.value})
     }
 
-    filterRange = (item) => {
-      console.log(item.target.value)
+    // filterRange = (data)=>{
+    //   console.log(data.target.value)
+    //   console.log("ahdkjshdkjhasdkjshkjd",data)
+    //   this.state.items.filter(function (item) {
+    //     return item.price <= 320;
+    //   })
+    // }
+
+
+    filterRange = (data)=>{
+      let rates = []
+      console.log('text valueeeeee', data.target.value)
+
+      rates = this.state.items.filter(function (item) {
+        return item.price <= data.target.value;
+      });
+
+      console.log('rrrrrr', rates)
+
+      // let highAmount = [];
+      // let refreshList = [highAmount,...this.state.items]
+
+      // console.log('refresh', highAmount)
+
+      // for (let i = 0; i < this.state.items.length; i++) {
+      //   if (this.state.items[i].price <= data.target.value) {
+      //       this.state.items.push(this.state.items[i]);
+      //   }
+      // }
+
+      this.setState({
+        items:rates,
+        startLow:data.target.value,
+        //rates : [this.state.items]
+      })
     }
 
+    abc = () => {
+      return {__html: 2+3};
+    }
+    
     render() {
       var Values = [];
        Values = JSON.parse(window.localStorage.getItem('cartValue')) || [];
@@ -99,6 +138,10 @@ class Products extends Component {
       let filteredItems = this.state.items.filter((item) => {
         return item.name.toLowerCase().includes(this.state.searchItems.toLowerCase())
       })
+
+      // let filteredRangeItems = this.state.items.filter(function (item) {
+      //   return item.price <= 320;
+      // });
       
     return (
       <div>
@@ -106,7 +149,8 @@ class Products extends Component {
       <Container className="wrapper">
         <Row>
           <Col lg={3} md={6} sm={6} xs={6}>
-            <FilterItems filterRange={this.filterRange}/>
+            <FilterItems filterRange={this.filterRange} />
+            <div dangerouslySetInnerHTML={this.abc()} />
           </Col>
           <Col lg={9} md={6} sm={6} xs={6}>
             <SortItems sortItems={this.sortItems} />
@@ -115,7 +159,7 @@ class Products extends Component {
 
         <Row>
           <Col md={12} sm={12} xs={12} lg={{ span: 9, offset: 3}}>
-            <Data items={this.state.items} addToCart={this.addToCart} errorMsg={this.state.errorMsg} filteredItems={filteredItems}/>
+            <Data items={this.state.items} addToCart={this.addToCart} errorMsg={this.state.errorMsg} filteredItems={filteredItems} />
           </Col>
         </Row>
       </Container>

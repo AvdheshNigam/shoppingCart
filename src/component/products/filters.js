@@ -25,14 +25,15 @@ class FilterItems extends Component {
                     <h6>Filter Option</h6>
                   </li>
                   <li>
-                  <div class="slidecontainer">
-                    <p><i className="left"><FaRupeeSign />100:</i> <span id="demo"></span><i className="right"><FaRupeeSign />10000</i></p>
-                    <input type="range" min="10" max="100" class="slider" onInput={this.props.filterRange}/>
+                  <div className="slidecontainer">
+    <p><i className="left"><FaRupeeSign />{this.state.amount}100:</i> <span id="demo"></span><i className="right"><FaRupeeSign />10000</i></p>
+                    <input type="range" min="10" max="700" class="slider" value={this.state.startLow} onClick={this.props.filterRange}/>
+                  {/* onInput={this.props.filterRange} */}
                   </div>
                   </li>
                   <li className="filter-button">
                     <a href="#">Cancel</a>
-                    <a href="#">Apply</a>
+                    <a href="#" >Apply</a>
                   </li>
                 </ul>
             </li>
