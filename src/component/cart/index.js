@@ -19,7 +19,7 @@ class Cart extends Component {
       removeItem = (data) => {
         let Values = [];
         Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
-        for( var i = Values.length-1; i--;){
+        for( var i = Values.length-0; i--;){
         if ( Values[i].id === data) {
           Values.splice(i,1);
         }
@@ -33,7 +33,7 @@ class Cart extends Component {
       addQuantity = (data) => {
         let Values = [];
         Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
-        for( var i = Values.length-1; i--;){
+        for( var i = Values.length-0; i--;){
         if ( Values[i].id === data) {
             Values[i].quantity += 1
         }
@@ -47,7 +47,7 @@ class Cart extends Component {
       removeQuantity = (data) => {
         let Values = [];
         Values = JSON.parse(window.localStorage.getItem('cartValue')) || []
-        for( var i = Values.length-1; i--;){
+        for( var i = Values.length-0; i--;){
         if(Values[i].id === data && Values[i].quantity > 1) {
           Values[i].quantity -= 1
         }

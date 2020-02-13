@@ -100,9 +100,11 @@ class Products extends Component {
       console.log('rrrrrr', rates)
       console.log('itemsssss',this.state.items)
       this.setState({
-        items:rates
+        items:rates,
       })
     }
+
+
 
     abc = () => {
       return {__html: 2+3};
@@ -119,6 +121,8 @@ class Products extends Component {
       // let filteredRangeItems = this.state.items.filter(function (item) {
       //   return item.price <= 320;
       // });
+
+
       
     return (
       <div>
