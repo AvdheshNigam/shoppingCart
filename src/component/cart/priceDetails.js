@@ -14,13 +14,20 @@ class ItemsCart extends Component {
       {this.props.priceArray.map((item,index)=>{
         total = total+item.price
         totalDiscount = totalDiscount + item.discount
-      pHtml.push(<p key={index}>Price ({item.name +' X '+ item.quantity}) <span>: <FaRupeeSign /> {item.price * item.quantity} </span></p>)
-      })}
+          pHtml.push(<div>
+                    <p key={index}>Price ({item.quantity +' '+ item.name}) <span>: <FaRupeeSign /> {item.price * item.quantity} </span></p>
+                    <p>Discount ({totalDiscount + ' X ' + item.quantity})<span>: <FaRupeeSign /> {item.quantity*(item.discount+item.discount)}</span></p>
+                    
+                  </div>
+                  )
+                  
+          })}
     return (
         <div className="price-details">
           <h2>Price Details</h2>
           {pHtml}
-          <p>Discount <span>: <FaRupeeSign /> {totalDiscount}</span></p>
+          {/* <p>Discount ({totalDiscount + ' X ' + item.quantity})<span>: <FaRupeeSign /> {item.quantity*(item.discount+item.discount)}</span></p> */}
+          {/* <p>Discount <span>: <FaRupeeSign /> {totalDiscount}</span></p>*/}
           <h3>Total Payable <span>:<FaRupeeSign /> {total - totalDiscount}</span></h3>
         </div>
     );
