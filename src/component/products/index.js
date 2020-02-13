@@ -17,8 +17,8 @@ class Products extends Component {
           errorMsg : '',
           cartItem:[],
           searchItems : '',
-          amount : '',
-          startLow : '',
+          max:'',
+          min:''
         }
     }
 
@@ -27,10 +27,12 @@ class Products extends Component {
     componentDidMount() {
       axios.get('https://api.myjson.com/bins/qzuzi')
       .then(response => {
-        console.log(response)
+        let price = response.data.map(item=>{return item.price})
         this.setState({
           items:response.data,
-          apiItems:response.data
+          apiItems:response.data,
+          max:Math.max(...price),
+          min:Math.min(...price)
         })
       })
       .catch(error => {
@@ -131,7 +133,7 @@ class Products extends Component {
       <Container className="wrapper">
         <Row>
           <Col lg={3} md={6} sm={6} xs={6}>
-            <FilterItems filterRange={this.filterRange} />
+            <FilterItems filterRange={this.filterRange} max={this.state.max} min={this.state.min} />
             <div dangerouslySetInnerHTML={this.abc()} />
           </Col>
           <Col lg={9} md={6} sm={6} xs={6}>

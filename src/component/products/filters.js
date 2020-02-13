@@ -25,8 +25,8 @@ class FilterItems extends Component {
                   </li>
                   <li>
                   <div className="slidecontainer">
-                    <p><i className="left"><FaRupeeSign />{this.state.amount}150:{this.props.highPrice}</i> <span id="demo"></span><i className="right"><FaRupeeSign />700</i></p>
-                    <input type="range" min="150" max="700" class="slider" value={this.state.startLow} onClick={this.props.filterRange}/>
+                    <p><i className="left"><FaRupeeSign />{this.props.min}</i> <span id="demo"></span><i className="right"><FaRupeeSign />{this.props.max}</i></p>
+                    <input type="range" min={this.props.min} max={this.props.max} className="slider" value={this.state.startLow} onClick={this.props.filterRange}/>
                   </div>
                   </li>
                   <li className="filter-button">

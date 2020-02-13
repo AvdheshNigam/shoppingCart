@@ -15,9 +15,9 @@ class ItemsCart extends Component {
       
       console.log(dHtml)
       {this.props.priceArray.map((item,index)=>{
-        total = total+item.price
+        total = total+(item.price * item.quantity)
         totalDiscount = totalDiscount + item.discount - item.discount
-          pHtml.push(<div>
+          pHtml.push(<div key={index}>
                     <p key={index}>Price ({item.quantity +' '+ item.name}) <span>: <FaRupeeSign /> {(item.price + item.discount) * item.quantity} </span></p>
                     <p>Discount ({item.discount + ' X ' + item.quantity})<span>: <FaRupeeSign /> {(item.price+item.discount - item.price) * item.quantity}</span></p>
                     
