@@ -13,6 +13,7 @@ class Products extends Component {
         super(props)
         this.state = {
           items: [],
+          apiItems:[],
           errorMsg : '',
           cartItem:[],
           searchItems : '',
@@ -27,8 +28,10 @@ class Products extends Component {
       axios.get('https://api.myjson.com/bins/qzuzi')
       .then(response => {
         console.log(response)
-
-        this.setState({items:response.data})
+        this.setState({
+          items:response.data,
+          apiItems:response.data
+        })
       })
       .catch(error => {
         console.log(error)
@@ -70,7 +73,7 @@ class Products extends Component {
         })
       }
       if(data === 'high'){
-        let high = this.state.items.sort((a,b)=>{
+        let high = this.state.apiItems.sort((a,b)=>{
            return  b.price - a.price
         })
         this.setState({
@@ -78,7 +81,7 @@ class Products extends Component {
         })
       }
       if(data === 'discount'){
-        let discount = this.state.items.sort((a,b)=>{
+        let discount = this.state.apiItems.sort((a,b)=>{
            return  b.discount - a.discount
         })
         this.setState({
@@ -94,11 +97,9 @@ class Products extends Component {
 
     filterRange = (data)=>{
       console.log('text valueeeeee', data.target.value)
-      let rates = this.state.items.filter(function (item) {
+      let rates = this.state.apiItems.filter(function (item) {
         return item.price <= data.target.value;
       });
-      console.log('rrrrrr', rates)
-      console.log('itemsssss',this.state.items)
       this.setState({
         items:rates,
       })
