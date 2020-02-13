@@ -73,7 +73,7 @@ class Products extends Component {
         })
       }
       if(data === 'high'){
-        let high = this.state.apiItems.sort((a,b)=>{
+        let high = this.state.items.sort((a,b)=>{
            return  b.price - a.price
         })
         this.setState({
@@ -81,7 +81,7 @@ class Products extends Component {
         })
       }
       if(data === 'discount'){
-        let discount = this.state.apiItems.sort((a,b)=>{
+        let discount = this.state.items.sort((a,b)=>{
            return  b.discount - a.discount
         })
         this.setState({
