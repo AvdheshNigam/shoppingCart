@@ -19,7 +19,7 @@ class ItemsCart extends Component {
         totalDiscount = totalDiscount + item.discount
           pHtml.push(<div>
                     <p key={index}>Price ({item.quantity +' '+ item.name}) <span>: <FaRupeeSign /> {(item.price + item.discount) * item.quantity} </span></p>
-          <p>Discount ({totalDiscount + ' X ' + item.quantity})<span>: <FaRupeeSign /> {(item.price+item.discount - item.price) * item.quantity}</span></p>
+                    <p>Discount ({totalDiscount + ' X ' + item.quantity})<span>: <FaRupeeSign /> {(item.price+item.discount - item.price) * item.quantity}</span></p>
                     
                   </div>
                   )
