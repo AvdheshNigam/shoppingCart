@@ -11,11 +11,13 @@ class ItemsCart extends Component {
       let total = 0;
       let totalDiscount = 0;
       let pHtml = []
+      let dHtml = [...pHtml]
+      console.log(dHtml)
       {this.props.priceArray.map((item,index)=>{
         total = total+item.price
         totalDiscount = totalDiscount + item.discount
           pHtml.push(<div>
-                    <p key={index}>Price ({item.quantity +' '+ item.name}) <span>: <FaRupeeSign /> {item.price * item.quantity} </span></p>
+                    <p key={index}>Price ({item.quantity +' '+ item.name}) <span>: <FaRupeeSign /> {item.price + item.discount * item.quantity} </span></p>
                     <p>Discount ({totalDiscount + ' X ' + item.quantity})<span>: <FaRupeeSign /> {item.quantity*(item.discount+item.discount)}</span></p>
                     
                   </div>
