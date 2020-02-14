@@ -17,7 +17,8 @@ class Products extends Component {
         <Row className="left-border">
         {
           items.length ? 
-          filteredItems.length ? filteredItems.map(item => <Col lg={3} md={3} sm={6} xs={6} className="colFive" key={item.id} name={item.name} price={item.price}>
+          filteredItems.length ? 
+            filteredItems.map(item => <Col lg={3} md={3} sm={6} xs={6} className="colFive" key={item.id} name={item.name} price={item.price}>
             <div className="item">
               <Image src={item.img_url} alt={ item.name } />
               <div className="item-decription">
