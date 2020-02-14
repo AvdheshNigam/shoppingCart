@@ -106,12 +106,6 @@ class Products extends Component {
         items:rates,
       })
     }
-
-
-
-    abc = () => {
-      return {__html: 2+3};
-    }
     
     render() {
       var Values = [];
@@ -121,12 +115,6 @@ class Products extends Component {
         return item.name.toLowerCase().includes(this.state.searchItems.toLowerCase())
       })
 
-      // let filteredRangeItems = this.state.items.filter(function (item) {
-      //   return item.price <= 320;
-      // });
-
-
-      
     return (
       <div>
       <PageHeader cart={Values.length > 0 ? Values.length:this.state.cartItem.length} handleSearchBar={this.handleSearchBar} />
@@ -134,7 +122,6 @@ class Products extends Component {
         <Row>
           <Col lg={3} md={6} sm={6} xs={6}>
             <FilterItems filterRange={this.filterRange} max={this.state.max} min={this.state.min} />
-            <div dangerouslySetInnerHTML={this.abc()} />
           </Col>
           <Col lg={9} md={6} sm={6} xs={6}>
             <SortItems sortItems={this.sortItems} />
