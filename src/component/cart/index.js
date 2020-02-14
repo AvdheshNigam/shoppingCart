@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container, Row, Col } from 'react-bootstrap';
+import {Container, Row, Col, Button } from 'react-bootstrap';
 
 import Data from './data';
 import PriceDetails from './priceDetails';
@@ -81,9 +81,17 @@ class Cart extends Component {
               <Data cartArray={this.state.priceArray} removeQuantity={this.removeQuantity} addQuantity={this.addQuantity} removeItem={this.removeItem}/>
             </Col>
             
+            {this.state.priceArray.length === 0 ? 
+            
+            <Col lg={12} md={12} sm={12} xs={12}>
+              <p className="empty-data">Your Shopping Cart is empty.</p>
+              <p className="empty-data-home">Continue shopping on tthe website <span onClick={()=>{window.location.href="/"}}>homepage</span>.</p>
+            </Col>: 
+
             <Col lg={3} md={4} sm={6} xs={12}>
-              <PriceDetails priceArray={this.state.priceArray} />
-            </Col>
+            <PriceDetails priceArray={this.state.priceArray} />
+            </Col>}
+            
           </Row> 
         </Container>
         <PageFooter />

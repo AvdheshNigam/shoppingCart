@@ -695,9 +695,22 @@ range Slide
   cursor: pointer;
 }
 
+.empty-data{
+  text-align: center;
+  font-size: 27px;
+  font-weight: 800;
+  margin-top: 100px;
+}
 
+.empty-data-home{
+  font-size: 17px;
+  text-align: center;
+  color:#dddddd;
+}
 
-
-
+.empty-data-home span{
+  cursor: pointer;
+  color:#007bff
+}
 
 
