@@ -29,8 +29,6 @@ class ItemsCart extends Component {
         <div className="price-details">
           <h2>Price Details</h2>
           {pHtml}
-          {/* <p>Discount ({totalDiscount + ' X ' + item.quantity})<span>: <FaRupeeSign /> {item.quantity*(item.discount+item.discount)}</span></p> */}
-          {/* <p>Discount <span>: <FaRupeeSign /> {totalDiscount}</span></p>*/}
           <h3>Total Payable <span>:<FaRupeeSign /> {total - totalDiscount}</span></h3>
         </div>
     );
