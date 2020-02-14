@@ -17,7 +17,7 @@ class FilterItems extends Component {
       <Row>
         <Col lg={12} md={12} sm={12} xs={12}>
           <ul className="items-filter">
-            <li>
+            <li style={{'listStyle':'none'}}>
               <h4><FaFilter /> Filters</h4>
                 <ul>
                   <li className="filter-option">

@@ -131,9 +131,30 @@ footer{
   background-color: #007bff;
   padding: 10px 5px 10px 5px;
   margin: 0 auto;
-  left: 0;
-  right: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  max-width: 1200px;
+  width: 100%;
+  z-index: 10;
 }
+
+@media (min-width: 576px){
+  footer {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px){
+  footer {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    footer {
+      max-width: 960px;
+   }
+  }
 
 footer p{
   font-size: 12px;
@@ -208,10 +229,9 @@ Items CSS Start
   color: #c20d0d;
   text-align: center;
 }
-.left-border{
-  border-left: 1px solid #9b9999;
-}
+
 @media(min-width: 991px) {
+  
   .left-border{
     margin-top: -100px!important;
   }
@@ -469,7 +489,7 @@ Filter CSS
   .items-filter > li{
     position: relative;
     display: inline-block;
-    list-style: none;
+    list-style: none!important;
   }
   .items-filter > li>h4{
     font-size: 16px;
