@@ -11,9 +11,10 @@ function App() {
     
     <BrowserRouter>
       <div className="App">
+          
           <Route exact path='/' component={Products} />
-          <Route exact path='/products' component={Products} />
-          <Route exact path='/cart' component={Cart} />
+          <Route exact path='/avproductssh' component={Products} />
+          <Route exact path='/avcartsh' component={Cart} />
       </div>
     </BrowserRouter>
   );

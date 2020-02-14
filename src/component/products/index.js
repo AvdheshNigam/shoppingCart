@@ -117,7 +117,8 @@ class Products extends Component {
 
     return (
       <div>
-      <PageHeader cart={Values.length > 0 ? Values.length:this.state.cartItem.length} handleSearchBar={this.handleSearchBar} />
+        <h1>Avdhesh Nigam</h1>
+      {/* <PageHeader cart={Values.length > 0 ? Values.length:this.state.cartItem.length} handleSearchBar={this.handleSearchBar} />
       <Container className="wrapper">
         <Row>
           <Col lg={3} md={6} sm={6} xs={6}>
@@ -134,7 +135,7 @@ class Products extends Component {
           </Col>
         </Row>
       </Container>
-      <PageFooter />
+      <PageFooter /> */}
       </div>
     );
   }
