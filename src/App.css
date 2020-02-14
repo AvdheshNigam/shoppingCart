@@ -719,4 +719,11 @@ range Slide
   margin-top: 50px;
 }
 
+.no-result-found{
+  font-weight: 500;
+  color:#000000;
+  text-align: center;
+  margin-top: 50px;
+}
+
 

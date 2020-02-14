@@ -16,8 +16,8 @@ class Products extends Component {
     return (
         <Row className="left-border">
         {
-          items.length ?
-          filteredItems.map(item => <Col lg={3} md={3} sm={6} xs={6} className="colFive" key={item.id} name={item.name} price={item.price}>
+          items.length ? 
+          filteredItems.length ? filteredItems.map(item => <Col lg={3} md={3} sm={6} xs={6} className="colFive" key={item.id} name={item.name} price={item.price}>
             <div className="item">
               <Image src={item.img_url} alt={ item.name } />
               <div className="item-decription">
@@ -31,6 +31,10 @@ class Products extends Component {
               </div>
             </div>
           </Col> ) : 
+          
+          <Col lg={9} md={9} sm={9} xs={9}>
+            <p className="no-result-found">Not Found</p> 
+          </Col> :
           
           <Col lg={9} md={9} sm={9} xs={9}>
             <p className="loading">Loading...</p> 
