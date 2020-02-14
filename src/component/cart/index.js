@@ -85,7 +85,7 @@ class Cart extends Component {
             
             <Col lg={12} md={12} sm={12} xs={12}>
               <p className="empty-data">Your Shopping Cart is empty.</p>
-              <p className="empty-data-home">Continue shopping on tthe website <span onClick={()=>{window.location.href="/"}}>homepage</span>.</p>
+              <p className="empty-data-home">Continue shopping on the website <span onClick={()=>{window.location.href="/"}}>homepage</span>.</p>
             </Col>: 
 
             <Col lg={3} md={4} sm={6} xs={12}>
