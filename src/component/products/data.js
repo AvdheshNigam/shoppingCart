@@ -30,7 +30,12 @@ class Products extends Component {
                 <Button onClick={()=>this.props.addToCart(item)}>Add to Cart</Button>
               </div>
             </div>
-          </Col> ) : null 
+          </Col> ) : 
+          
+          <Col lg={9} md={9} sm={9} xs={9}>
+            <p className="loading">Loading...</p> 
+          </Col>
+
           }
           { errorMsg ? <Col lg={12}><p className="data-not-fetch">{ errorMsg }</p></Col> : null }
       </Row>

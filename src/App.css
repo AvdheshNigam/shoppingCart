@@ -705,12 +705,17 @@ range Slide
 .empty-data-home{
   font-size: 17px;
   text-align: center;
-  color:#0000000;
+  color:#000000;
 }
 
 .empty-data-home span{
   cursor: pointer;
   color:#007bff
+}
+.loading{
+  font-weight: 800;
+  color:#007bff;
+  text-align: center;
 }
 
 
