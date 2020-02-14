@@ -117,7 +117,7 @@ class Products extends Component {
 
     return (
       <div>
-        <h1>Avdhesh Nigam</h1>
+        <h1 style={{'textAlign':'center', 'marginTop':'100px'}}>Avdhesh Nigam</h1>
       {/* <PageHeader cart={Values.length > 0 ? Values.length:this.state.cartItem.length} handleSearchBar={this.handleSearchBar} />
       <Container className="wrapper">
         <Row>
