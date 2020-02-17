@@ -6,13 +6,13 @@ class Test extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          items: []
+          items: [],
+          searchItems : ''
         }
     }
     componentDidMount() {
-      axios.get('https://api.myjson.com/bins/qzuzi')
+      axios.get('https://jsonplaceholder.typicode.com/todos/')
       .then(response => {
-        
         this.setState({
           items: response.data
         })
@@ -28,21 +28,26 @@ class Test extends Component {
       console.log(item.target.value)
       this.setState({searchItems : item.target.value})
     } 
+
     
     render() {
-      const { items, filteredItems } = this.state
+      const { items } = this.state
 
-      
-      
+      let filteredItems = this.state.items.filter((item) => {
+        return item.title.toLowerCase().includes(this.state.searchItems.toLowerCase())
+      })
+
+      console.log('ddddd', filteredItems)
+
     return (
       <div className="wrapper">
           <div className="control">
-            <input type="text" className="input" onChange={this.props.onSelectItem} />
+            <input type="text" className="input" onChange={this.onSelectItem} />
           </div>
           {
           items.length ?
-          items.map(item => <div key={item.id} className="list is-hoverable">
-            <a className="list-item">{item.name}</a>
+          filteredItems.map(item => <div key={item.id} className="list is-hoverable">
+            <a href={item.name} className="list-item">{item.title}</a>
           </div>) :
           null
           }
