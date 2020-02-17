@@ -117,10 +117,11 @@ class Products extends Component {
 
     return (
       <div>
-        <h1 style={{'textAlign':'center', 'marginTop':'100px'}}>Avdhesh Nigam</h1>
-      {/* <PageHeader cart={Values.length > 0 ? Values.length:this.state.cartItem.length} handleSearchBar={this.handleSearchBar} />
+        
+      <PageHeader cart={Values.length > 0 ? Values.length:this.state.cartItem.length} handleSearchBar={this.handleSearchBar} />
       <Container className="wrapper">
         <Row>
+            <h1 style={{'textAlign':'center', 'marginTop':'100px','display':'none'}}>Avdhesh Nigam</h1>
           <Col lg={3} md={6} sm={6} xs={6}>
             <FilterItems filterRange={this.filterRange} max={this.state.max} min={this.state.min} />
           </Col>
@@ -135,7 +136,7 @@ class Products extends Component {
           </Col>
         </Row>
       </Container>
-      <PageFooter /> */}
+      <PageFooter />
       </div>
     );
   }
